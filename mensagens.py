@@ -132,7 +132,7 @@ Para continuar, aperte /ok ;)
 """
 
 
-#Mensagem que será enviada com as informações do Sistema
+#Mensagem que será enviada com as informações do Sistema e a economia em períodos de tempo 
 mensagem_sis = """
 Olá, {}!
 Aqui estão as informações do seu Sistema Solar!
@@ -140,16 +140,22 @@ Aqui estão as informações do seu Sistema Solar!
 Potência Total: {:.2f} Kwp
 Potência Maxima do Inversor: {:.2f} Kw
 Potência Mínima do Inversor: {:.2f} Kw
-"""
 
+\U0001F911 De acordo com a Tarifa Energética do seu Estado e o seu consumo de energia mensal, fizemos uma previsão de quanto você economizaria ao passar de:
 
-
-
-#Mensagem que será enviada informando quanto o usuário poderá economizar períodos de tempos definidos
-mensagem_eco = """
 3 meses: R$ {:.2f}
 6 meses: R$ {:.2f}
 1 ano: R$ {:.2f}
 2 anos: R$ {:.2f}
 5 anos: R$ {:.2f}
+"""
+
+
+#Mensagem que será enviada no final 
+mensagem_final = """
+Obrigada por usar meu serviços! Fico feliz que chegou até aqui! 
+Até a próxima! \U0001F970
+	
+\U0001F47E Desenvolvido por Gislany Dias
+      Instagram | Linkedin | GitHub  
 """

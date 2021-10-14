@@ -25,7 +25,7 @@ bot = telebot.TeleBot(chave_api)
 @bot.message_handler(commands=["ok"])
 def resultado(mensagem):
 
-    """Função envia as informações com os cálculos quando o usuário apertar /ok. As informações serão calculadas usando a função do módulo 'mem_cal' e substituindo os resultado nas variavéis do módulo 'cons_pot' que armazena os dados temporariamente."""
+    """Função envia as informações com os cálculos de potencia e economia quando o usuário apertar /ok. As informações serão calculadas usando a função do módulo 'mem_cal' e substituindo os resultado nas variavéis do módulo 'cons_pot' que armazena os dados temporariamente."""
 
     cons_pot.ptotal, cons_pot.pmax, cons_pot.pmin = mem_cal.calcula(cons_pot.con, taxas.hsp)
 
@@ -34,7 +34,8 @@ def resultado(mensagem):
     cadastra_resultados(cons_pot.cpf, cons_pot.con, cons_pot.ptotal, cons_pot.pmax, cons_pot.pmin, cons_pot.mes_tres, cons_pot.mes_seis, cons_pot.ano_um, cons_pot.ano_dois, cons_pot.ano_cinco)
 
 
-    bot.reply_to(mensagem, mensagem_sis.format(cons_pot.nome,cons_pot.ptotal, cons_pot.pmax, cons_pot.pmin))
+    bot.reply_to(mensagem, mensagem_sis.format(cons_pot.nome,cons_pot.ptotal, cons_pot.pmax, cons_pot.pmin,cons_pot.mes_tres,cons_pot.mes_seis,cons_pot.ano_um,cons_pot.ano_dois,cons_pot.ano_cinco))
+    bot.reply_to(mensagem, mensagem_final)
 
 
 
